@@ -1,4 +1,4 @@
-// script.js (Updated)
+
 class Portfolio {
     constructor(name, age, aim, education, institution, facebook, github, linkedin) {
         this.name = name;
@@ -39,20 +39,18 @@ Connect with me:
     }
 }
 
-// Create Portfolio Object with Social Links
+
 const myPortfolio = new Portfolio(
     "Yodin Dawadi",
     18,
     "Full Stack Developer (MERN)",
     "BSC. CSIT",
     "Central Campus of Technology, Dharan",
-    "https://www.facebook.com/profile.php?id=61556957793988",  // Replace with your Facebook profile URL
-    "https://github.com/yodinDawadi",        // Replace with your GitHub profile URL
-    "https://www.linkedin.com/in/yodin-dawadi-18804a227/" // Replace with your LinkedIn profile URL
+    "https://www.facebook.com/profile.php?id=61556957793988",
+    "https://github.com/yodinDawadi", 
+    "https://www.linkedin.com/in/yodin-dawadi-18804a227/"
 );
 
-// Display information in the terminal
 document.getElementById('terminal-content').innerHTML = myPortfolio.displayInfo();
 
-// Display social links at the bottom of the terminal
 document.getElementById('social-links').innerHTML = myPortfolio.displaySocialLinks();

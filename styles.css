@@ -112,6 +112,6 @@ body {
     color: #dcdcaa; 
 }
 .comment {
-    color: #6a9955; /* Color for comments */
-    font-style: italic; /* Italicize comments */
+    color: #6a9955;
+    font-style: italic;
 }
