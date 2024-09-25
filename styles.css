@@ -1,85 +1,99 @@
-
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #1e1e1e;
-    color: #d4d4d4;
+/* General reset and container styling */
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
+    font-family: 'Courier New', Courier, monospace;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    background-color: #1e1e1e;
 }
 
+/* Main container */
 .container {
-    width: 80%;
-    max-width: 800px;
+    width: 90%; /* Increased for mobile responsiveness */
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
+/* Terminal box styling */
 .terminal {
     background-color: #1e1e1e;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    color: #d4d4d4;
+    padding: 15px;
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
+    min-height: 300px; /* Reduced height for mobile */
+    overflow: auto; /* Enables scrolling for overflow content */
 }
 
+/* Terminal header styling */
 .terminal-header {
-    background-color: #333;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    background-color: #333333;
     padding: 10px;
-    border-radius: 10px 10px 0 0;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.terminal-header .buttons {
+/* Header buttons */
+.buttons {
     display: flex;
-    gap: 8px;
+    gap: 10px;
 }
 
-.terminal-header .buttons span {
+.buttons span {
     width: 12px;
     height: 12px;
     border-radius: 50%;
     display: inline-block;
 }
 
-.terminal-header .buttons .close {
-    background-color: #ff5f56;
-}
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.maximize { background-color: #27c93f; }
 
-.terminal-header .buttons .minimize {
-    background-color: #ffbd2e;
-}
-
-.terminal-header .buttons .maximize {
-    background-color: #27c93f;
-}
-
-.terminal-header .title {
-    color: #d4d4d4;
-    font-weight: bold;
-}
-
+/* Terminal body content */
 .terminal-body {
-    padding: 20px;
-    background-color: #1e1e1e;
-    border-radius: 0 0 10px 10px;
+    padding: 10px;
     font-size: 14px;
-}
-
-#terminal-content {
     white-space: pre-wrap;
+    word-wrap: break-word;
     font-family: 'Courier New', Courier, monospace;
-    color: #d4d4d4;
 }
 
-.code {
-    color: #dcdcaa;
-}
-
+/* Syntax highlighting */
 .value {
     color: #ce9178;
 }
 
+.code-keyword {
+    color: #569cd6;
+}
+
+.variable {
+    color: #9cdcfe;
+}
+
+.console-keyword {
+    color: #4ec9b0;
+}
+
+.function-call {
+    color: #dcdcaa;
+}
+
+.comment {
+    color: #6a9955;
+    font-style: italic;
+}
+
+/* Social links */
 #social-links {
     margin-top: 20px;
     color: #d4d4d4;
@@ -97,21 +111,57 @@ body {
     text-decoration: underline;
 }
 
-.code-keyword {
-    color: #569cd6;
+/* Mobile Responsive Styling */
+@media (max-width: 768px) {
+    .terminal-body {
+        font-size: 12px; /* Smaller font size for medium devices */
+    }
+    
+    #social-links {
+        font-size: 12px; /* Smaller social link size */
+    }
 }
 
-.variable {
-    color: #9cdcfe;
+@media (max-width: 576px) {
+    .container {
+        width: 95%; /* Utilize more of the screen on mobile */
+    }
+
+    .terminal {
+        min-height: 250px; /* Reduce terminal height for mobile */
+    }
+
+    .terminal-body {
+        font-size: 10px; /* Further reduced font size for smaller screens */
+        padding: 8px;
+    }
+    
+    #social-links {
+        font-size: 10px;
+    }
+
+    /* Hide long URLs or trim them for mobile */
+    #social-links a {
+        display: block;
+        margin-bottom: 5px;
+    }
 }
-.console-keyword {
-    color: #4ec9b0; 
+/* styles.css (Add this for the button styling) */
+.copy-btn {
+    background-color: #007acc; /* Blue similar to VS Code */
+    color: #ffffff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-.function-call {
-    color: #dcdcaa; 
+.copy-btn:hover {
+    background-color: #005a9e; /* Darker blue on hover */
 }
-.comment {
-    color: #6a9955;
-    font-style: italic;
+
+.copy-btn:active {
+    background-color: #003f73; /* Even darker blue on click */
 }

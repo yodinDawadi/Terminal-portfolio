@@ -54,3 +54,14 @@ const myPortfolio = new Portfolio(
 document.getElementById('terminal-content').innerHTML = myPortfolio.displayInfo();
 
 document.getElementById('social-links').innerHTML = myPortfolio.displaySocialLinks();
+    
+const copyBtn = document.getElementById('copy-btn');
+
+copyBtn.addEventListener('click', () => {
+    const terminalContent = document.getElementById('terminal-content').innerText;
+    navigator.clipboard.writeText(terminalContent).then(() => {
+        alert("Code copied to clipboard!");
+    }).catch(err => {
+        console.error("Failed to copy code: ", err);
+    });
+});
